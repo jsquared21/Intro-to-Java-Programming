@@ -43,13 +43,11 @@ public class Exercise_03_09 {
 				 + d6 * 6 + d7 * 7 + d8 * 8 + d9 * 9) % 11;
 
 		// Display the 10-digit ISBN
+		System.out.println("The ISBN-10 number is " + d1 + d2 + d3 + d4 + d5 
+								 + d6 + d7 + d8 + d9);
 		if (d10 == 10)
-		{
-			System.out.println("The ISBN-10 number is " + d1 + d2 + d3 + d4 + d5 
-									 + d6 + d7 + d8 + d9 + "X");
-		}
+			System.out.println("X");
 		else
-			System.out.println("The ISBN-10 number is " + d1 + d2 + d3 + d4 + d5 
-									 + d6 + d7 + d8 + d9 + d10);
+			System.out.println(d10);
 	}
 }
