@@ -23,7 +23,6 @@ public class Exercise_05_36 {
 		for (int i = 0; i < 9; i++) {
 			System.out.print(isbn.charAt(i));
 		}
-
 		if (d10 == 10)
 			System.out.println("X");
 		else
