@@ -4,7 +4,7 @@ in a department store. Your pay consists of a base salary and a commission. The
 base salary is $5,000. The scheme shown below is used to determine the commission
 rate.
 
-			Sales Amount 						Commission Rate
+			Sales Amount                   Commission Rate
 			------------------------------------------------
 			$0.01–$5,000                     8 percent
 			$5,000.01–$10,000               10 percent
