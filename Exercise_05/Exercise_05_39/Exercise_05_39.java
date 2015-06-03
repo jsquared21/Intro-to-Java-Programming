@@ -19,6 +19,8 @@ you have to generate in order to make $30,000.
 */
 public class Exercise_05_39 {
 	public static void main(String[] args) {
+		// Create a consstant value for commmission sought
+		final double COMMISSION_SOUGHT = 30000; 
 		double salesAmount, 				// Sales amount
 				 commission,				// Employee commission
 				 balance;					// Sales balance
@@ -39,10 +41,10 @@ public class Exercise_05_39 {
 			if (salesAmount > 0)
 				commission += balance * 0.08;
 
-			// While commission is less than 30000 loop
-		} while (commission < 30000);
+			// While commission is less than commission sought loop
+		} while (commission < COMMISSION_SOUGHT);
 
 		// Display results
-		System.out.printf("Minimum sales to earn $30,000: $%.2f\n", salesAmount);
+		System.out.printf("Minimum sales to earn $30,000: $%.0f\n", salesAmount);
 	}
 }
