@@ -7,7 +7,7 @@ public class Exercise_05_12 {
 		int n = 0;	// Start n at 0
 
 		// Find the smallest n such that n^2 > 12,000
-		while (Math.pow(n, 2) < 12000) {
+		while (Math.pow(n, 2) <= 12000) {
 			n++; 		// Increment n
 		}
 
