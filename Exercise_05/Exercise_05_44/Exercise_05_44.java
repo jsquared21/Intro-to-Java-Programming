@@ -22,6 +22,6 @@ public class Exercise_05_44 {
 		}
 
 		// Display result
-		System.out.println(bits);
+		System.out.println("The bits are " + bits);
 	}
 }

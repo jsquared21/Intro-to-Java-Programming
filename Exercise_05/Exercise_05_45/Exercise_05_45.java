@@ -33,6 +33,5 @@ public class Exercise_05_45 {
 		// Display results
 		System.out.println("The mean is " + mean);
 		System.out.printf("The standard deviation is %.5f\n", deviation);
-
 	}
 }
