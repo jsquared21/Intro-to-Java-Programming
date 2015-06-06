@@ -28,7 +28,7 @@ public class Exercise_06_06 {
 
 	/** displayPattern Method */
 	public static void displayPattern(int n) {
-		int padding = n - 1;	// Holds number of while space for padding
+		int padding = n - 1;	// Holds number of white space
 		for (int r = 1; r <= n; r++) {
 			// Print padding
 			for (int p = 0; p < padding; p++) {
