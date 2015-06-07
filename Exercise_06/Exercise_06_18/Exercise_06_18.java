@@ -19,13 +19,9 @@ public class Exercise_06_18 {
 		System.out.print("Enter a password: ");
 		String password = input.nextLine();
 
-		// Display Valid Passord if rules are followed
-		// or Invalid Password otherwise
-		if (isValidPassword(password))
-			System.out.print("Valid ");
-		else
-			System.out.print("Invalid ");
-		System.out.println("Password");
+		// Display Valid Password if rules are followed, Invalid Password otherwise
+		System.out.println(
+			(isValidPassword(password) ? "Valid " : "Invalid ") + "Password");
 	}
 
 	/** Method isPasswordVaild tests whether a string is a valid password */
