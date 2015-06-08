@@ -28,7 +28,7 @@ public class Exercise_04_15 {
 				number = 7;
 			else if (ch >= 'M')
 				number = 6;
-			else if (ch >= 'j')
+			else if (ch >= 'J')
 				number = 5;
 			else if (ch >= 'G')
 				number = 4;
