@@ -35,7 +35,6 @@ public class PrimeNumberMethod {
 				return false; // Number is not a prime
 			}
 		}
-
 		return true; // Number is prime
 	}
 }
