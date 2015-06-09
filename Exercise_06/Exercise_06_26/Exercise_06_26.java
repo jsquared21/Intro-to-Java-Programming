@@ -27,7 +27,8 @@ public class Exercise_06_26 {
 		}
 	}
 
-	/** Method isPalindromicPrime */
+	/** Method isPalindromicPrime returns true if number is a Prime and 
+	    Palindrome. False otherwise */
 	public static boolean isPalindromicPrime(int num) {
 		return PrimeNumberMethod.isPrime(num) && 
 				 Exercise_06_03.isPalindrome(num);
