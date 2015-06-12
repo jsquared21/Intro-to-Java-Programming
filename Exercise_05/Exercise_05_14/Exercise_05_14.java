@@ -6,6 +6,7 @@ a divisor for both n1 and n2 in this order. The first such common divisor is the
 greatest common divisor for n1 and n2. Write a program that prompts the user to
 enter two positive integers and displays the gcd.
 */
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class Exercise_05_14 {
@@ -32,3 +33,5 @@ public class Exercise_05_14 {
 			" and " + n2 + " is " + gcd);
 	}
 }
+=======
+>>>>>>> f7c770b17f3c46acc01e28b1b7c3742d6c7130d0
