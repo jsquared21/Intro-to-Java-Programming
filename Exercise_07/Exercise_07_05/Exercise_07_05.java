@@ -23,7 +23,7 @@ public class Exercise_07_05 {
 
 			// Test if num is distinct
 			if (isDistinct(distinctNumbers, num)) {
-				distinctNumbers[i] = num;
+				distinctNumbers[count] = num;
 				count++;	// Increment count
 			}
 		}
