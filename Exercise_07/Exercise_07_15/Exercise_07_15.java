@@ -45,7 +45,7 @@ public class Exercise_07_15 {
 
 	/** linearSearch */
 	public static int linearSearch(int[] array, int key) {
-		for (int i: array) {
+		for (int i = 0; i < arrray.length; i++) {
 			if (key == i)
 				return i;
 		}
