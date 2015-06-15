@@ -34,8 +34,10 @@ public class Exercise_07_26 {
 	}
 	/** equals returns true is the two arrays are indentical. False otherwise */
 	public static boolean equals(int[] list1, int[] list2) {
-		int smallerList = list1.length < list2.length ? list1.length : list2.length;
-		for (int i = 0; i < smallerList; i++) {
+		if (list1.length != list2.length)
+			return false;
+
+		for (int i = 0; i < list1.length; i++) {
 			if (list1[i] != list2[i])
 				return false;
 		}
