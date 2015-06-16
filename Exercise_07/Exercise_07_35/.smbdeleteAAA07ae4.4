@@ -1,0 +1,103 @@
+/*********************************************************************************
+* (Game: hangman) Write a hangman game that randomly generates a word and        *
+* prompts the user to guess one letter at a time, as shown in the sample run.    *
+* Each letter in the word is displayed as an asterisk. When the user makes a     *
+* correct guess, the actual letter is then displayed. When the user finishes a   *
+* word, display the number of misses and ask the user whether to continue to     *
+* play with another word. Declare an array to store words, as follows:           *
+*********************************************************************************/
+import java.util.Scanner;
+
+public class Exercise_07_35 {
+	/* Main method */
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		String play;
+		do {
+			// Generate a random word
+			char[] word = getWord();
+			
+			// Hide word with asterisks
+			char[] asterisks = new char[word.length];
+			fillAsterisks(asterisks);
+
+			int missed = 0;
+			do {
+				char guess = getGuess(asterisks);		
+	
+				if (!isRightGuess(word, asterisks, guess))
+					missed++;
+		
+			} while (!isWordFinish(asterisks));
+	
+			print(word, missed);
+	
+			System.out.println("Do you want to guess another word? Enter y or n>");
+			play = input.next();
+
+		} while (play.charAt(0) == 'y');
+	}
+
+	/* getWord */
+	public static char[] getWord() {
+		String[] words = {"write", "that", "program"};
+		String w = words[(int)(Math.random() * words.length)];
+		char[] word = new char[w.length()];
+
+		for (int i = 0; i < word.length; i++) {
+			word[i] = w.charAt(i);
+		}
+		return word;
+	}
+
+	/** fillAsterisks */
+	public static void fillAsterisks(char[] list) {
+		for (int i = 0; i < list.length; i++) {
+			list[i] = '*';
+		}
+	}
+
+	/** checkGuess */
+	public static boolean isRightGuess(char[] word, char[] blanks, char guess) {
+		boolean correct = false;
+		for (int i = 0; i < word.length; i++) {
+			if (word[i] == guess) {
+				if (blanks[i] == guess)
+					System.out.println("\t" + guess + " is already in the word");
+				else {
+					blanks[i] = guess;
+				}
+				correct = true;
+			}
+		}
+		if (!correct)
+			System.out.println("\t" + guess + " is not in the word");
+		return correct;
+	}
+
+	/** isWordFinish */
+	public static boolean isWordFinish(char[] blanks) {
+		for (char e: blanks) {
+			if (e == '*')
+				return false;
+		}
+		return true;
+	}
+
+	/** print */
+	public static void print(char[] word, int missed) {
+		System.out.print("The word is ");
+		System.out.print(word);
+		System.out.println(" You missed " + missed + " time");
+	}
+
+	/** getGuess */
+	public static char getGuess(char[] asterisks){
+		Scanner input = new Scanner(System.in);
+		System.out.print("(Guess) Enter a letter in word ");
+		System.out.print(asterisks);
+		System.out.print(" > ");
+		String g = input.next();
+		return g.charAt(0);
+	}
+}
