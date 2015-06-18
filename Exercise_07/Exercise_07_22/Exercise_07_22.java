@@ -7,17 +7,23 @@
 public class Exercise_07_22 {
 	/** Main method */
 	public static void main(String[] args) {
-		char[] board;
+		char[] board; // Create an array
+
+		// Repeat while queens are attacking
 		do {
+			// Generate a board
 			board = getNewBoard();
+
+			// Place eight queens
 			placeQueens(board);
 
 		} while (isAttacking(board));
 
+		// Display solution
 		print(board);
 	}
 
-	/** placeQueens */
+	/** placeQueens randomly places eight queens on the board*/
 	public static void placeQueens(char[] board) {
 		int location;
 		for (int i = 0; i < 8; i++) {
@@ -28,18 +34,17 @@ public class Exercise_07_22 {
 		}
 	}
 
-
-	/** placeQueens */
+	/** placeQueens randomly places one queen on the board */
 	public static int placeQueens() {
 		return (int)(Math.random() * 64);
 	}
 
-	/** isAttack */
+	/** isAttacking returns true if two queens are attacking each other */
 	public static boolean isAttacking(char[] board) {
 		return isSameRow(board) || isSameColumn(board) ||  isSameDiagonal(board);
 	}
 
-	/** isSameRow */
+	/** isSameRow returns true if two queens are in the same row */
 	public static boolean isSameRow(char[] board) {
 		int[] rows = new int[8];
 		for (int i = 0; i < board.length; i++) {
@@ -52,25 +57,25 @@ public class Exercise_07_22 {
 		return false;
 	}
 
-	/** isSameColumn */
+	/** isSameColumn returns true if two queens are in the same column */
 	public static boolean isSameColumn(char[] board) {
 		int[] columns = new int[8];
 		for (int i = 0; i < board.length; i++) {
 			if (isOccupied(board[i])) {
-				columns[getColum(i)]++;
+				columns[getColumn(i)]++;
 			}	
-			if (columns[getColum(i)] > 1) 
+			if (columns[getColumn(i)] > 1) 
 				return true;
 		}
 		return false;
 	}
 
-	/** isSameDiagonal */
+	/** isSameDiagonal returns true if two queens are on the same diagonal */
 	public static boolean isSameDiagonal(char[] board) {
 		for (int i = 0; i < board.length; i++) {
 			if (isOccupied(board[i])) {
 				for (int j = 0; j < board.length; j++) {
-					if (isOccupied(board[j]) && Math.abs(getColum(j) - getColum(i)) ==
+					if (isOccupied(board[j]) && Math.abs(getColumn(j) - getColumn(i)) ==
 					    Math.abs(getRow(j) - getRow(i)) && j != i) {
 						return true;
 					}
@@ -80,12 +85,12 @@ public class Exercise_07_22 {
 		return false;
 	}
 
-	/** isOccupied */
+	/** isOccupied returns true if the element in x is the char Q */
 	public static boolean isOccupied(char x) {
 		return x == 'Q';
 	}
 
-	/** getNewBoard */
+	/** getNewBoard returns a char array filled with blank space */
 	public static char[] getNewBoard() {
 		char[] board = new char[64];
 			for (int i = 0; i < board.length; i++)
@@ -93,7 +98,7 @@ public class Exercise_07_22 {
 		return board;
 	}
 
-	/** print */
+	/** print displays the board */
 	public static void print(char[] board) {
 		for (int i = 0; i < board.length; i++) {
 			System.out.print(
@@ -101,13 +106,13 @@ public class Exercise_07_22 {
 		}
 	}
 
-	/** getRow */
+	/** getRow returns the row number that corresponds to the given index */
 	public static int getRow(int index) {
 		return index % 8;
 	}
-
-	/** getColum */
-	public static int getColum(int index) {
+ 
+	/** getColumn returns the column number that corresponds to the given index */
+	public static int getColumn(int index) {
 		return index / 8;
 	}
 }
