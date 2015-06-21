@@ -16,7 +16,7 @@ public class Exercise_08_29 {
 		// Prompt the user to enter two 3 x 3 arrays
 		System.out.print("Enter list1: ");
 		int[][] list1 = getArray();
-		System.out.print("Enter list1: ");
+		System.out.print("Enter list2: ");
 		int[][] list2 = getArray();
 
 		// Displays whether the two lists are identical
@@ -38,40 +38,52 @@ public class Exercise_08_29 {
 		return m;
 	}
 
-	/** sort sorts each column in a 3 x 3 array in accending order */
-	public static void sort(int[][] m) {
-		for (int r = 0; r < 3; r++) {
-			for (int i = 0; i < 3; i++) {
-				// Find the min in the column 1
-				int min = m[r][i];
-				int minIndex = i;
-	
-				for (int j = i + 1; j < 3; j++) {
-					if (min > m[r][j]) {
-						min = m[r][j];
-						minIndex = j;
-					}
-				}
-	
-				// Swap
-				if (minIndex != i) {
-					m[r][minIndex] = m[r][i];
-					m[r][i] = min;
-				}
-			}
-		}
-	}
 
 	/** equals returns true if m1 and m2 are identical */
 	public static boolean equals(int[][] m1, int[][] m2) {
-		sort(m1);
-		sort(m2);
-		for (int i = 0; i < 3; i++) {
-			for (int j = 0; j < 3; j++) {
-				if (m1[i][j] != m2[i][j])
-					return false;
-			}
+		int[] list1 = sort(m1);
+		int[] list2 = sort(m2);
+		for (int i = 0; i < list1.length; i++) {
+			if (list1[i] != list2[i])
+				return false;
 		}
 		return true;
+	}
+
+	/** matrixToArray returns an array initialized with a matrix elements */
+	public static int[] matrixToArray(int[][] m) {
+		int[] list = new int[m.length * m[0].length];
+		int k = 0;
+		for (int i = 0; i < m.length; i++) {
+			for (int j = 0; j < m[i].length; j++) {
+				list[k] = m[i][j];
+				k++;
+			}
+		}
+		return list;
+	}
+	
+	/** sort sorts each column in a 3 x 3 array in accending order */
+	public static int[] sort(int[][] m) {
+		int [] list = matrixToArray(m);
+		for (int i = 0; i < 3; i++) {
+			// Find the min in the column 1
+			int min = list[i];
+			int minIndex = i;
+
+			for (int j = i + 1; j < 3; j++) {
+				if (min > list[j]) {
+					min = list[j];
+					minIndex = j;
+				}
+			}
+
+			// Swap
+			if (minIndex != i) {
+				list[minIndex] = list[i];
+				list[i] = min;
+			}
+		}
+		return list;
 	}
 }
