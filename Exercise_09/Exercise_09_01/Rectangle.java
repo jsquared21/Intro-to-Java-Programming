@@ -1,15 +1,14 @@
-/*********************************************
-*            UML Class Diagram               *  
-*               Rectangle                    *  
-* -------------------------------------------*  
-* width: double                              *
-* height: double                             * 
-* -------------------------------------------* 
-* Rectangle()                                *  
-* Rectangle(width: double, height: double)   *
-* getArea(): double                          *
-* getPerimeter(): double                     *
-*********************************************/
+            //UML Class Diagram                     
+/**************************************************
+*               Rectangle                         *  
+* ------------------------------------------------*  
+* width: double                                   *
+* height: double                                  * 
+* Rectangle()                                     *  
+* Rectangle(newWidth: double, newHeight: double)  *
+* getArea(): double                               *
+* getPerimeter(): double                          *
+***************************************************/
 
 // Define the Rectangle class
 public class Rectangle {
