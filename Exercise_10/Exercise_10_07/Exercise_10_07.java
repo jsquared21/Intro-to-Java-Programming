@@ -20,9 +20,8 @@ public class Exercise_10_07 {
 		// Create ten accounts in an array
 		Account[] accounts = new Account[10];
 
-		// Initialize accounts with balance of 100
-		int initialBalance = 100;
-		initialBalance(accounts, initialBalance);
+		// Initialize accounts with balance
+		initialBalance(accounts);
 		
 		// Once the system starts, it will not stop
 		do {
@@ -45,9 +44,10 @@ public class Exercise_10_07 {
 	}
 
 	/** Initialize accounts with balance of 100 */
-	public static void initialBalance(Account[] a, double b) {
+	public static void initialBalance(Account[] a) {
+		int initialBalance = 100;
 		for (int i = 0; i < a.length; i++) {
-			a[i] = new Account(i, b);
+			a[i] = new Account(i, initialBalance);
 		}
 	}
 
