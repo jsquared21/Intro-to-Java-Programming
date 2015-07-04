@@ -41,21 +41,17 @@ public class MyInteger {
 
 	/** Return true if value is even */
 	public boolean isEven() {
-		return value % 2 == 0;
+		return isEven(value); 
 	}
 
 	/** Return true if value is odd */
 	public boolean isOdd() {
-		return value % 2 != 0;
+		return isOdd(value); 
 	}
 
 	/** Return true if value is prime */
 	public boolean isPrime() {
-		for (int divisor = 2; divisor <= value / 2; divisor++) {
-			if (value % divisor == 0)
-				return false;
-		}
-		return true;
+		return isPrime(value);
 	}
 
 	/** Return true if the specified value is even */
@@ -79,21 +75,17 @@ public class MyInteger {
 
 	/** Return true if the specified value is even */
 	public static boolean isEven(MyInteger myInteger) {
-		return myInteger.isEven();//value % 2 == 0;
+		return myInteger.isEven();
 	}
 
 	/** Return true if the specified value is odd */
 	public static boolean isOdd(MyInteger myInteger) {
-		return myInteger.isOdd();//value % 2 != 0;
+		return myInteger.isOdd();
 	}
 
 	/** Return true if specified value is prime */
 	public static boolean isPrime(MyInteger myInteger) {
-		for (int divisor = 2; divisor <= myInteger.value / 2; divisor++) {
-			if (myInteger.value % divisor == 0)
-				return false;
-		}
-		return true;
+		return myInteger.isPrime();
 	}
 
 	/** Return true is the value in this object 
