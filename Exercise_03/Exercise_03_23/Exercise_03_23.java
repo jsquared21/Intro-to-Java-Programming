@@ -21,7 +21,7 @@ public class Exercise_03_23 {
 		// Check whether the point is within the rectangle
 		// centered at (0, 0) with width 10 and height 5
 		boolean withinRectangle = (Math.pow(Math.pow(x, 2), 0.5) <= 10 / 2 ) ||
-										  (Math.pow(Math.pow(y, 2), 0.5) <= 5.0 /2);
+										  (Math.pow(Math.pow(y, 2), 0.5) <= 5.0 / 2);
 
 		// Display results
 		System.out.println("Point (" + x + ", " + y + ") is " +
