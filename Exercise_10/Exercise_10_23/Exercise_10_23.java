@@ -10,7 +10,7 @@
 * public char[] toChars();                                                       *
 * public static MyString2 valueOf(boolean b);                                    *
 *********************************************************************************/
-public class Exercise_20_23 {
+public class Exercise_10_23 {
 	/** Main method */
 	public static void main(String[] args) {
 		// Create two MyStirng2 objects
