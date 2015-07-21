@@ -27,7 +27,9 @@ public class Exercise_11_14 {
 		System.out.print("Enter five integers for list2: ");
 		fill(list2);
 
+		// Combined lists
 		ArrayList<Integer> list3 = union(list1, list2);
+
 		// Display combined list
 		System.out.print("The combined list is: ");
 		for (int i = 0; i < list3.size(); i++) {
