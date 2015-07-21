@@ -1,0 +1,66 @@
+/*********************************************************************************
+* (Largest rows and columns) Write a program that randomly fills in 0s and 1s    *
+* into an n-by-n matrix, prints the matrix, and finds the rows and columns with  *
+* the most 1s. (Hint: Use two ArrayLists to store the row and column indices     *
+* with the most 1s.) Here is a sample run of the program:                        *
+*********************************************************************************/
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Exercise_11_09 {
+	/** Main method */
+	public static void main(String[] args) {
+		// Create a Scanner
+		Scanner input = new Scanner(System.in);
+
+		// Prompt the user to enter the array size n
+		System.out.print("Enter the array size n: ");
+		int n = input.nextInt();
+
+		// Create a n-by-n matrix
+		int[][] array = new int[n][n];
+
+		fill(array);
+		print(array);
+		System.out.println("The largest row index: ");
+		ArrayList<int> largestRow = largestRow(array);
+		for (int i = 0; i < largestRow.size(); i++) {
+			System.out.print(largestRow.get(i) + " ");
+		}
+		System.out.println("The largest column index: ");
+		ArrayList<int> largestColumn = largestColumn(array);
+		for (int i = 0; i < largestColumn.size(); i++) {
+			System.out.print(largestColumn.get(i) + " ");
+		}
+	}
+
+	public static ArrayList<int> largestRow(int[][] array) {
+		ArrayList<int> rowIndex = new ArrayList<int>();
+		int[] count = new int[array.length];
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				
+			}
+		}
+	} 
+	
+	/** Fill array randomly with 0s and 1s */
+	public static void fill(int[][] array) {
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				array[i][j] = (int)(Math.random() * 2);
+			}
+		}
+	}
+
+	/** Display matrix */
+	public static void print(int[][] array) {
+		System.out.println("The random array is");
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 0; j < array[i].length; j++) {
+				System.out.print(array[i][j]);
+			}
+			System.out.println();
+		}
+	}
+}
