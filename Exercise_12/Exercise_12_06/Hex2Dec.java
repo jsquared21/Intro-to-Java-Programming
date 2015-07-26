@@ -16,8 +16,14 @@ public class Hex2Dec {
 		System.out.print("Enter a hex number: ");
 		String hex = input.nextLine();
 
-		System.out.println("The decimal value for hex number "
-			+ hex + " is " + hexToDecimal(hex.toUpperCase()));
+		// Handle NumberFormatException
+		try {
+			System.out.println("The decimal value for hex number "
+				+ hex + " is " + hexToDecimal(hex.toUpperCase()));
+		}
+		catch (NumberFormatException ex) {
+			System.out.println(ex.getMessage());
+		}
 	}
 
 	/** Converts a hex string into a decimal number and throws a 
