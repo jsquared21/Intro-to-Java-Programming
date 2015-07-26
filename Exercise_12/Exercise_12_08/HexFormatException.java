@@ -1,6 +1,6 @@
 // Implement HexFromatException class
 public class HexFormatException extends NumberFormatException {
-	String hex; // Hex exception value
+	private String hex; // Hex exception value
 
 	/** Construct a HexFormatException object */
 	public HexFormatException(String hex) {
