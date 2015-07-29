@@ -56,6 +56,7 @@ public class Exercise_12_31 {
 						name + " is ranked #" + list.get(0) + " in year " + year);
 					System.exit(0);
 				}
+				list.clear();
 			}
 		}
 		catch (java.net.MalformedURLException ex) {
