@@ -39,7 +39,8 @@ public class Exercise_12_28 {
 		ArrayList<File> list = new ArrayList<>();
 		for (String e: args) {
 			File f = new File(e);
-			if (f.getName().matches("Exercise\\d_\\d.*"))
+			if (f.isFile() &&
+				 f.getName().matches("Exercise\\d_\\d.*"))
 				list.add(f);
 		}
 		return list;
