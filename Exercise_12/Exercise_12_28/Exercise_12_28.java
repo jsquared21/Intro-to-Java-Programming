@@ -19,7 +19,7 @@ public class Exercise_12_28 {
 		}
 
 		// Create an ArrayList of File objects
-		ArrayList<File> list = new ArrayList<>();
+		ArrayList<File> list = getFiles(args);
 
 		// Pad each file's name in list
 		for (int i = 0; i < list.size(); i++) {
