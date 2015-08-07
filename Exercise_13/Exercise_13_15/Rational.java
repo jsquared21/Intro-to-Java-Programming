@@ -12,7 +12,7 @@ public class Rational extends Number implements Comparable {
 	/** Construct a rational with specifiec numerator and denominator */
 	public Rational(BigInteger numerator, BigInteger denominator) {
 		BigInteger gcd = gcd(numerator, denominator);
-		r[0] = (denominator.compareTo(BigInteger.ZERO) == 0
+		r[0] = (denominator.compareTo(BigInteger.ZERO) > 0
 			? BigInteger.ONE : 
 			new BigInteger("-1")).multiply(numerator.divide(gcd));
 		r[1] = denominator.divide(gcd);
@@ -25,7 +25,7 @@ public class Rational extends Number implements Comparable {
 		BigInteger gcd = BigInteger.ONE;
 
 		for (BigInteger k = BigInteger.ONE; 
-			k.compareTo(n1) < 1 && k.compareTo(n2) < 1; 
+			k.compareTo(n1) <= 0 && k.compareTo(n2) <= 0; 
 			k = k.add(BigInteger.ONE)) {
 			if (n1.remainder(k).compareTo(BigInteger.ZERO) == 0 && 
 				n2.remainder(k).compareTo(BigInteger.ZERO) == 0)
