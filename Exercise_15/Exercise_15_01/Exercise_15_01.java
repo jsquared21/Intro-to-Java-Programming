@@ -13,8 +13,6 @@ import javafx.scene.layout.VBox;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import java.util.ArrayList;
 
 public class Exercise_15_01 extends Application {
