@@ -39,6 +39,7 @@ public class Exercise_15_04 extends Application {
 		tfNumber1.setPrefColumnCount(4);
 		tfNumber2.setPrefColumnCount(4);
 		tfResult.setPrefColumnCount(4);
+		tfResult.setEditable(false);
 		vBox.setPadding(new Insets(2, 5, 0, 0));
 
 		// Process events
