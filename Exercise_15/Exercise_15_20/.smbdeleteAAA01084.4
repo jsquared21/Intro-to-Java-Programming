@@ -1,0 +1,96 @@
+/*********************************************************************************
+* (Geometry: display angles) Write a program that enables the user to drag the   *
+* vertices of a triangle and displays the angles dynamically as the triangle     *
+* shape changes, as shown in Figure 15.30a. The formula to compute angles is     *
+* given in Listing 4.1.                                                          *
+*********************************************************************************/
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.shape.Polygon;
+import javafx.scene.shape.Circle;
+import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
+import javafx.collections.ObservableList;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
+public class Exercise_15_20 extends Application {
+	@Override // Override the start method in the Application class
+	public void start(Stage primaryStage) {
+		// Create a pane
+		Pane pane = new Pane();
+
+		// Create a polygon
+		Polygon polygon = new Polygon(50, 100, 100, 50, 150, 100);
+		polygon.setFill(Color.WHITE);
+		polygon.setStroke(Color.BLACK);
+		pane.getChildren().add(polygon);
+		ObservableList<Double> list = polygon.getPoints();
+
+		// Create three circles
+		for (int i = 0; i < list.size(); i += 2) {
+			pane.getChildren().add(new Circle(list.get(i), list.get(i + 1), 5));
+		}
+
+		double[] angles = getSides(list);
+
+		// Create three text
+		pane.getChildren().add(new Text(list.get(0), list.get(1) - 5, 
+			String.format("%.0f", angles[0])));
+		pane.getChildren().add(new Text(list.get(2), list.get(3) - 5, 
+			String.format("%.0f", angles[1])));
+		pane.getChildren().add(new Text(list.get(4), list.get(5) - 5, 
+			String.format("%.0f", angles[2])));
+
+		// Create and register the handle
+		pane.setOnMouseDragged(e -> {
+			double[] a = getSides(list);
+			for (int i = 0; i < list.size(); i += 2) {
+				if (list.get(i) == e.getX() && list.get(i + 1) == e.getY()){
+					pane.getChildren().clear();
+					list.set(i, e.getX());
+					list.set(i + 1, e.getY());
+
+					for (int j = 0; j < list.size(); j += 2) {
+						pane.getChildren().add(new Circle(list.get(i), list.get(i + 1), 5));
+					}
+			
+			
+					// Create three text
+					pane.getChildren().add(new Text(list.get(0), list.get(1) - 5, 
+						String.format("%.0f", a[0])));
+					pane.getChildren().add(new Text(list.get(2), list.get(3) - 5, 
+						String.format("%.0f", a[1])));
+					pane.getChildren().add(new Text(list.get(4), list.get(5) - 5, 
+						String.format("%.0f", a[2])));
+				}
+			}
+		});
+
+		// Create a scene and place it in the stage
+		Scene scene = new Scene(pane, 200, 200);
+		primaryStage.setTitle("Exercise_15_20"); // Set the stage title
+		primaryStage.setScene(scene); // Place the scene in the stage
+		primaryStage.show(); // Display the stage
+
+		pane.requestFocus();
+	}
+
+	private double[] getSides(ObservableList<Double> list) {
+		double a = Math.sqrt(Math.pow(list.get(0) - list.get(2), 2)
+			+ Math.pow(list.get(1) - list.get(3), 2));
+		double b = Math.sqrt(Math.pow(list.get(2) - list.get(4), 2)
+			+ Math.pow(list.get(3) - list.get(5), 2));
+		double c = Math.sqrt(Math.pow(list.get(4) - list.get(0), 2)
+			+ Math.pow(list.get(5) - list.get(2), 2));
+
+		double[] angles = new double[3];
+		angles[0] = Math.toDegrees(Math.acos((a * a - b * b - c * c)
+			/ (-2 * b * c)));
+		angles[1] = Math.toDegrees(Math.acos((b * b - a * a - c * c)
+			/ (-2 * a * c)));
+		angles[2] = Math.toDegrees(Math.acos((c * c - b * b - a * a)
+			/ (-2 * a * b)));
+		return angles;
+	}
+}
