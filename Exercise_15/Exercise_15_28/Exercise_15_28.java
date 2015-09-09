@@ -32,15 +32,15 @@ public class Exercise_15_28 extends Application {
 		borderPane.setCenter(fanPane);
 		borderPane.setBottom(hBox);
 
-		btPause.setOnMouseClicked(e -> {
+		btPause.setOnAction(e -> {
 			fanPane.pause();
 		});
 
-		btResume.setOnMouseClicked(e -> {
+		btResume.setOnAction(e -> {
 			fanPane.play();
 		});
 
-		btReverse.setOnMouseClicked(e -> {
+		btReverse.setOnAction(e -> {
 			fanPane.reverse();
 		});
 
