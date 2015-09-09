@@ -27,8 +27,8 @@ public class Exercise_15_32 extends Application {
 		Button btStart = new Button("Start");
 
 		// Create and register handler
-		btStop.setOnMouseClicked(e -> clock.pause());
-		btStart.setOnMouseClicked(e -> clock.play());
+		btStop.setOnAction(e -> clock.pause());
+		btStart.setOnAction(e -> clock.play());
 
 		// Place buttons in hBox
 		hBox.getChildren().addAll(btStop, btStart);
