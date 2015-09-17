@@ -33,6 +33,9 @@ public class Exercise_16_21 extends Application {
 		count.setFont(Font.font(60));
 		count.setPrefColumnCount(4);
 		
+		// Set meidaplayer to loop
+		mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+
 		// Create a pane
 		StackPane pane = new StackPane(count);
 
