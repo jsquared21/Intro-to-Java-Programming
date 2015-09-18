@@ -21,7 +21,8 @@ public class Exercise_16_26 extends Application {
 	@Override // Override the start method in the Application class
 	public void start(Stage primaryStage) {
 		// Create an image
-		ImageView image = new ImageView(new Image("image/flag6.gif"));
+		ImageView image = new ImageView(new Image(
+			"http://cs.armstrong.edu/liang/common/image/flag6.gif"));
 
 		// Create a media player
 		MediaPlayer audio = new MediaPlayer(new Media(
