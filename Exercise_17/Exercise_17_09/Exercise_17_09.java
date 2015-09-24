@@ -131,7 +131,6 @@ public class Exercise_17_09 extends Application {
 		}
 		catch (FileNotFoundException ex) {}
 		catch (IOException ex) {}
-		//catch (IndexOutOfBoundsException ex) {}
 	}
 
 	/** Write addreass to file */
