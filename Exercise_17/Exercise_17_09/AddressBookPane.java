@@ -27,10 +27,6 @@ public class AddressBookPane extends BorderPane {
 		drawAddressBook();
 	}
 
-//	public AddressBookPane() {
-//		drawAddressBook();
-//	}
-
 	private void drawAddressBook() {
 		// Set the column size for each text field
 		tfName.setPrefColumnCount(23);
@@ -53,13 +49,5 @@ public class AddressBookPane extends BorderPane {
 		// Place nodes in pane
 		setCenter(paneForInfo);
 		setBottom(paneForButtons);
-
-		// Create and register handlers
-//		btAdd.setOnAction(e -> addAddress());
-//		btFirst.setOnAction(e -> first());
-//		btNext.setOnAction(e -> next());
-//		btPrevious.setOnAction(e -> previous());
-//		btLast.setOnAction(e -> last());
-//		btUpdate.setOnAction(e -> update());
 	}
 }

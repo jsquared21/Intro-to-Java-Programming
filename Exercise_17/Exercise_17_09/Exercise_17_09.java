@@ -57,10 +57,15 @@ public class Exercise_17_09 extends Application {
 			RandomAccessFile inout = 
 				new RandomAccessFile("AddressBook.dat", "rw");
 		) {
-			inout.seek(0);
-			read(inout);
-			System.out.println("Reading address #1");
-			count = 1;
+			if (inout.length() > 0) {
+				inout.seek(0);
+				read(inout);
+				System.out.println("Reading address #1");
+				count = 1;
+			}
+			else {
+				System.out.println("Address is empty!");
+			}
 		}
 		catch (IOException ex) {}
 	}
@@ -71,10 +76,15 @@ public class Exercise_17_09 extends Application {
 			RandomAccessFile inout = 
 				new RandomAccessFile("AddressBook.dat", "rw");
 		) {
-			inout.seek(count * 91);
-			read(inout);
-			count++;
-			System.out.println("Reading address #" + count);
+			if (count * 91 < inout.length()) {
+				inout.seek(count * 91);
+				read(inout);
+				count++;
+				System.out.println("Reading address #" + count);
+			}
+			else {
+				System.out.println("End of file!");
+			}
 		}
 		catch (IOException ex) {}
 	}
@@ -85,7 +95,7 @@ public class Exercise_17_09 extends Application {
 			RandomAccessFile inout = 
 				new RandomAccessFile("AddressBook.dat", "rw");
 		) {
-			if (count > 1)
+			if (count > 1) 
 				count--;
 			else
 				count = 1;
@@ -121,7 +131,7 @@ public class Exercise_17_09 extends Application {
 		}
 		catch (FileNotFoundException ex) {}
 		catch (IOException ex) {}
-		catch (IndexOutOfBoundsException ex) {}
+		//catch (IndexOutOfBoundsException ex) {}
 	}
 
 	/** Write addreass to file */
@@ -131,7 +141,7 @@ public class Exercise_17_09 extends Application {
 		inout.write(fixedLength(pane.tfCity.getText().getBytes(), CITY));
 		inout.write(fixedLength(pane.tfState.getText().getBytes(), STATE));
 		inout.write(fixedLength(pane.tfZip.getText().getBytes(), ZIP));
-		System.out.println(pane.tfName.getText() + "\'s address saved.");
+		System.out.println("Address #" + count + " saved!");
 	}
 
 	/** Read address from file */
