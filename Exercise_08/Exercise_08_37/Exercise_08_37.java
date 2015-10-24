@@ -22,7 +22,7 @@ public class Exercise_08_37 {
 		for (int i = 0; i < statesAndCapitals.length; i++) {
 			System.out.print("What is the capital of "
 				+ statesAndCapitals[i][0] + "? ");
-			String capital = input.next();
+			String capital = input.nextLine();
 
 			if (isEqual(statesAndCapitals[i][1], capital)) {
 				System.out.println("Your answer is correct");
@@ -78,7 +78,6 @@ public class Exercise_08_37 {
 			{"Virginia", "Richmond"}, {"Washington", "Olympia"}, 
 			{"West Virginia", "Charleston"}, {"Wisconsin", "Madison"}, 
 			{"Wyoming", "Cheyenne"}};
-
 		return d;
 	}
 }
