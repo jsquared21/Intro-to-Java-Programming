@@ -23,7 +23,7 @@ public class Exercise_21_04 {
 		}
 
 		// Create a set to store vowels
-		Set<Character> set = new HashSet(Arrays.asList('A', 'E', 'I', 'O', 'U'));
+		Set<Character> set = new HashSet<>(Arrays.asList('A', 'E', 'I', 'O', 'U'));
 		int vowels = 0; // Counts the number of vowels
 		int consonants = 0; // Counts the number of consonants
 
