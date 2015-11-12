@@ -14,42 +14,31 @@ public class Exercise_21_06 {
 		Scanner input = new Scanner(System.in);
 
 		// Create a list and two sets
-		List<Integer> list = new LinkedList<>();	// Stores all integers
-		TreeSet<Integer> set = new TreeSet<>();	// Stores nonduplicate integers
-		Set<Integer> results = new HashSet<>();	// Stores results
+		Map<Integer, Integer> map = new HashMap<>(); // Stores results
 
 		// Prompt the user to enter a number of integers
 		System.out.println("Enter a number of integers." 
 			+ "\nInput ends when the input is 0:");
 
-		int integer;
-		while ((integer = input.nextInt()) != 0) {
-			list.add(integer);
-			set.add(integer);
+		int key;
+		while ((key = input.nextInt()) != 0) {
+			if (!map.containsKey(key)) {
+				map.put(key, 1);
+			}
+			else {
+				int frequency = map.get(key);
+				frequency++;
+				map.put(key, frequency);
+			}
 		}
 
-		// Find the maximum occurrence
-		int max = 0;
-		for (Integer i: set) {
-			int frequency = Collections.frequency(list, i);
-			if (frequency > max)
-				max = frequency;
+		System.out.print("The most occurrences integers are: ");
+		int max = Collections.max(map.values());
+		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
+			if (entry.getValue() == max) {
+				System.out.print(entry.getKey() + " ");
+			}
 		}
-
-		// Add integers with the most occurrences to list
-		for (Integer i: set) {
-			if (Collections.frequency(list, i) == max)
-				results.add(i);
-		}
-
-		// Display the integers that have the most occurences
-		if (results.size() > 1) {
-			System.out.println("The integers that have the most occurrences are: " 
-				+ results);
-		}
-		else
-			System.out.println("The integer that has the most occurrences is: " 
-				+ results);
-
+		System.out.println();
 	}
 }
