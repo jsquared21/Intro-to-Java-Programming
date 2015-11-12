@@ -32,8 +32,11 @@ public class Exercise_21_06 {
 			}
 		}
 
-		System.out.print("The most occurrences integers are: ");
+		// Find the maximum occurrence
 		int max = Collections.max(map.values());
+
+		// Display the integers that have the most occurences
+		System.out.print("The most occurrences integers are: ");
 		for (Map.Entry<Integer, Integer> entry : map.entrySet()) {
 			if (entry.getValue() == max) {
 				System.out.print(entry.getKey() + " ");
