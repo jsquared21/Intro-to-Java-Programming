@@ -1,0 +1,60 @@
+/*********************************************************************************
+* (Web crawler) Rewrite Listing 12.18, WebCrawler.java, to improve the           *
+* performance by using appropriate new data structures for listOfPendingURLs and *
+* listofTraversedURLs.                                                           *
+*********************************************************************************/
+import java.util.*;
+
+public class Exercise_21_14 {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter a URL: ");
+		String url = input.nextLine();
+		crawler(url); // Traverse the Web from the a starting url
+	}
+
+	public static void crawler(String startingURL) {
+		Set<String> listOfPendingURLs = new LinkedHashSet<>();
+		Set<String> listOfTraversedURLs = new LinkedHashSet<>();
+
+		listOfPendingURLs.add(startingURL);
+		while (listOfTraversedURLs.size() <= 100) {
+			Set<String> subURLs = new HashSet<>();
+			for (String urlString: listOfPendingURLs) {
+				listOfTraversedURLs.add(urlString);
+				System.out.println("Craw " + urlString);
+				subURLs.addAll(getSubURLs(urlString));
+			} 
+			subURLs.removeAll(listOfTraversedURLs);
+			listOfPendingURLs.addAll(subURLs);
+		}
+	}
+
+	public static Set<String> getSubURLs(String urlString) {
+		Set<String> set = new LinkedHashSet<>();
+
+		try {
+			java.net.URL url = new java.net.URL(urlString);
+			Scanner input = new Scanner(url.openStream());
+			int current = 0;
+			while (input.hasNext()) {
+				String line = input.nextLine();
+				current = line.indexOf("http:", current);
+				while (current > 0) {
+					int endIndex = line.indexOf("\"", current);
+					if (endIndex > 0) { // Ensure that a correct URL is found
+						set.add(line.substring(current, endIndex));
+						current = line.indexOf("http:", endIndex);
+					}
+					else
+						current = -1;
+				}
+			}
+		}
+		catch (Exception ex) {
+			System.out.println("Error: " + ex.getMessage());
+		}
+
+		return set;
+	}
+}
