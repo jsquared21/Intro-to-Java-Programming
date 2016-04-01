@@ -1,0 +1,31 @@
+/*********************************************************************************
+* (Check order) Write the following overloaded methods that check whether an     *
+* array is ordered in ascending order or descending order. By default, the       *
+* method checks ascending order. To check descending order, pass false to the    *
+* ascending argument in the method.                                              *
+*********************************************************************************/
+
+public class Exercise_23_06 {
+	public static boolean ordered(int[] list) {
+		for (int k = 1; k < list.length && needNextPass; k++) {
+			// Array may be sorted and next pass not needed
+			needNextPass = false;
+			for (int i =0; i < list.length - k; i++) {
+				if (list[i] > list[i + 1]) {
+					// Swap list[i] with list[i + 1]
+					int temp = list[i];
+					list[i] = list[i + 1];
+					list[i + 1] = temp;
+
+					needNextPass = true; // Next pass still needed
+				}
+			}
+		}
+	}
+
+	/** A test method */
+	public static void main(String[] args) {
+		int[] list = {2, 3, 2, 5, 6, 1, -2, 3, 14, 12};
+
+	}
+}
