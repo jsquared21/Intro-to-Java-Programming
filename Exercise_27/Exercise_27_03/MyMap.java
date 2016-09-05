@@ -1,11 +1,11 @@
 public interface MyMap<K, V> {
-	/** Remove all of the entries form this map */
+	/** Remove all of the entries from this map */
 	public void clear();
 
 	/** Return true if the specified key is in the map */
 	public boolean containsKey(K key);
 
-	/** Return true if this map sontains the specified value */
+	/** Return true if this map contains the specified value */
 	public boolean containsValue(V value);
 
 	/** Return a set of entries in the map */
@@ -33,7 +33,7 @@ public interface MyMap<K, V> {
 	public java.util.Set<V> values();
 
 	/** Define an inner class for Entry */
-	public static class Entry<K, V> {
+	public class Entry<K, V> {
 		K key;
 		V value;
 
@@ -50,7 +50,7 @@ public interface MyMap<K, V> {
 			return value;
 		}
 
-		@Override 
+		@Override
 		public String toString() {
 			return "[" + key + ", " + value + "]";
 		}

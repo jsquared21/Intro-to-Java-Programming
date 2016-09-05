@@ -23,7 +23,7 @@ public interface MyMap<K, V> {
 	/** Add an entry (key, value) into the map */
 	public V put (K key, V value);
 
-	/** Remove entry for teh specified key */
+	/** Remove entry for the specified key */
 	public void remove(K key);
 
 	/** Return the number of mappings in this map */
@@ -39,7 +39,7 @@ public interface MyMap<K, V> {
 
 		public Entry(K key, V value) {
 			this.key = key;
-			this. value = value;
+			this.value = value;
 		}
 
 		public K getKey() {
