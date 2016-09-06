@@ -170,8 +170,10 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 			index %= capacity;
 		}
 
-		if (table.get(index).getKey() == key)
+		if (table.get(index).getKey() == key) {
 			table.remove(index);
+			size--; // Decrease size
+		}
 	}
 
 	@Override /** Return the number of entries in this map */
