@@ -174,6 +174,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
 		if (table.get(index).getKey() == key) {
 			table.remove(index);
+			size--; // Decrease size
 		}
 	}
 
