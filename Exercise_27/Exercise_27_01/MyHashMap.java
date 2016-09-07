@@ -156,20 +156,16 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	@Override /** Remove the entry for the specified key */
 	public void remove(K key) {
 		int index = hash(key.hashCode());
-		int i = index - 1; // One cycle of the arraylist
-
-		// While index is empty or there is a 
-		// collision check the next index in cycle
-		while ((table.get(index) == null || 
-				  table.get(index).getKey() != key) && i != index) {
+		
+		// Remove the entry that matches the key
+		while (table != null) {
+			if (table.get(index).getKey().equals(key)) {
+				table.remove(index);
+				size--; // Decrease size
+				break; // Remove just one entry that matches the key
+			}
 			index++;
 			index %= capacity;
-		}
-
-		// Remove the entry that matches the key
-		if (table.get(index).getKey() == key) {
-			table.remove(index);
-			size--; // Decrease size
 		}
 	}
 
