@@ -92,14 +92,14 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 		int index = hash1;
 		int j = 0;
 
-		while (table.get(index) == null) {
+		while (table.get(index) != null) {
+			if (table.get(index).getKey().equals(key)) {
+				return table.get(index).getValue();
+			}
+			
 			// Secondary hash: (k + j * h'(key)) % N
 			index = hash1 + j++ * hash2(hash1); 
 			index %= capacity;
-		}
-
-		if (table.get(index).getKey() == key) {
-			return table.get(index).getValue();
 		}
 
 		return null;
