@@ -161,6 +161,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 		int index = hash(key.hashCode());
 		int j = 0;
 
+		// Remove the first entry that matches the key
 		while (table.get(index) != null) {
 			if (table.get(index).getKey().equals(key)) {
 				table.remove(index);
