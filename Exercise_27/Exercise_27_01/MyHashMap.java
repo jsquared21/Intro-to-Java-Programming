@@ -90,7 +90,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 		int index = hash(key.hashCode());
 
 		while(table.get(index) != null) {
-			if (table.get(index).getKey() == key) {
+			if (table.get(index).getKey().equals(key)) {
 					return table.get(index).getValue();
 			}
 			index++;
@@ -120,7 +120,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	@Override /** Add an entry (key, value) into the map */
 	public V put(K key, V value) {
 		int index = hash(key.hashCode());
-		
+
 		while (table.get(index) != null) {
 			// The key is already in the map
 			if (table.get(index).getKey().equals(key)) {
