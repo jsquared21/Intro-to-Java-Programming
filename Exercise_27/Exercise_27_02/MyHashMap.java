@@ -160,9 +160,9 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	public void remove(K key) {
 		int index = hash(key.hashCode());
 		int j = 0;
-		
+
 		while (table.get(index) != null) {
-			if (table.get(index).getKey() == key) {
+			if (table.get(index).getKey().equals(key)) {
 				table.remove(index);
 				size--; // Decrease size
 				break; // Remove just one entry that matches key
