@@ -105,12 +105,12 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	public java.util.Set<V> getAll(K key) {
 		java.util.Set<V> set = new java.util.HashSet<>();
 		int index = hash(key.hashCode());
-		int i = index - 1;
 
-		while (i != index) {
-			if (table.get(index) != null && table.get(index).getKey() == key) {
+		while (table.get(index) != null ) {
+			if (table.get(index).getKey().equals(key)) {
 				set.add(table.get(index).getValue());
 			}
+			
 			index++;
 			index %= capacity;
 		}
