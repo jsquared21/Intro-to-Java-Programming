@@ -88,17 +88,13 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	@Override /** Return the value that matches the specified key */
 	public V get(K key) {
 		int index = hash(key.hashCode());
-		int i = index - 1; // One cycle of the arraylist
 
-		// While index is empty or a collision occurs check the next index
-		while (index != i && (table.get(index) == null || 
-				 table.get(index).getKey() != key)) {
+		while(table.get(index) != null) {
+			if (table.get(index).getKey() == key) {
+					return table.get(index).getValue();
+			}
 			index++;
 			index %= capacity;
-		}
-
-		if (table.get(index).getKey() == key) {
-				return table.get(index).getValue();
 		}
 
 		return null;
