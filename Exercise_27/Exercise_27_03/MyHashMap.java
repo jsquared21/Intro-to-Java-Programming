@@ -96,7 +96,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 			if (table.get(index).getKey().equals(key)) {
 				return table.get(index).getValue();
 			}
-			
+
 			// Secondary hash: (k + j * h'(key)) % N
 			index = hash1 + j++ * hash2(hash1); 
 			index %= capacity;
@@ -129,8 +129,8 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 		int j = 0;
 
 		while (table.get(index) != null) {
-			// Add a new entry (key, value)
-			if (table.get(index).getKey() == key) {
+			// The key is already in the map
+			if (table.get(index).getKey().equals(key)) {
 				Entry<K, V> entry = table.get(index);
 				V oldValue = entry.getValue();
 				// Replace old value with new value
