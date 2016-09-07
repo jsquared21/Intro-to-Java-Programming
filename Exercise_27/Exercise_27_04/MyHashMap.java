@@ -110,7 +110,7 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 			if (table.get(index).getKey().equals(key)) {
 				set.add(table.get(index).getValue());
 			}
-			
+
 			index++;
 			index %= capacity;
 		}
@@ -162,17 +162,17 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	@Override /** Remove the entry for the specified key */
 	public void remove(K key) {
 		int index = hash(key.hashCode());
-		int i = index - 1;
 
-		while (i != index && (table.get(index) == null || 
-				 table.get(index).getKey() != key)) {
+		// Remove the first entry that matches the key
+		while (table.get(index) != null) {
+			if (table.get(index).getKey().equals(key)) {
+				table.remove(index);
+				size--; // Decrease size
+				break; // Remove just one entry that matches the key
+			}
+			
 			index++;
 			index %= capacity;
-		}
-
-		if (table.get(index).getKey() == key) {
-			table.remove(index);
-			size--; // Decrease size
 		}
 	}
 
