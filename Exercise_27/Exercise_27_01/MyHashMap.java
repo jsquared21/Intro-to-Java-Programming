@@ -120,10 +120,10 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 	@Override /** Add an entry (key, value) into the map */
 	public V put(K key, V value) {
 		int index = hash(key.hashCode());
-
+		
 		while (table.get(index) != null) {
-			// Add a new entry (key, value)
-			if (table.get(index).getKey() == key) {
+			// The key is already in the map
+			if (table.get(index).getKey().equals(key)) {
 				Entry<K, V> entry = table.get(index);
 				V oldvalue = entry.getValue();
 				// Replace old value with new value
