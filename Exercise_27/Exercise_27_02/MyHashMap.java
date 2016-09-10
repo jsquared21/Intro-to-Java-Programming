@@ -217,9 +217,15 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
 	/** Rehash the map */
 	private void rehash() {
+		java.util.Set<Entry<K, V>> set = entrySet();
 		capacity <<= 1; // Same as capacity *= 2. <= is more efficient
-		for (int i = (size + 1); i < capacity; i++) {
+		size = 0;
+		table.clear();
+		for (int i = 0; i < capacity; i++) 
 			table.add(null);
+
+		for (Entry<K, V> entry : set) {
+			put(entry.getKey(), entry.getValue());
 		}
 	}
 
