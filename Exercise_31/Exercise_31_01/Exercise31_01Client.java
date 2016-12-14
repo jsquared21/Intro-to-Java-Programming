@@ -30,10 +30,12 @@ public class Exercise31_01Client extends Application {
 	public void start(Stage primaryStage) {
 		BorderPane pane = new BorderPane();
 
+		// Set text feilds alignment right
 		tfAnnualInterestRate.setAlignment(Pos.BASELINE_RIGHT);
 		tfNumberOfYears.setAlignment(Pos.BASELINE_RIGHT);
 		tfLoanAmount.setAlignment(Pos.BASELINE_RIGHT);
 
+		// GridPane to display loan information
 		GridPane paneForLoanInfo = new GridPane();
 		paneForLoanInfo.add(new Label("Annual Interest Rate"), 0, 0);
 		paneForLoanInfo.add(tfAnnualInterestRate, 1, 0);
