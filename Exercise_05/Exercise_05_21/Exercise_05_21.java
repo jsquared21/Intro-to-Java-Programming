@@ -22,7 +22,7 @@ public class Exercise_05_21 {
 		System.out.println(
 			"Interest Rate    Monthly Payment    Total Payment");
 		
-		// Display table wite interest rates
+		// Display table with interest rates
 		for (double i = 5.0; i <= 8; i += 0.125) {
 			System.out.printf("%-5.3f", i);
 			System.out.print("%           ");
