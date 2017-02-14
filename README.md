@@ -9,4 +9,4 @@ http://www.amazon.com/Intro-Programming-Comprehensive-Version-Edition/dp/0133761
 ## License & copyright
 © Jabari H James
 
-Licensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE.txt).
