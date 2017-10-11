@@ -6,9 +6,9 @@ public class Exercise_05_18_B {
 	public static void main(String[] args) {
 		// Display pattern B
 		System.out.println("Pattern B");
-		for (int r = 6; r >= 1; r--) {
-			for (int c = 1; c <= r; c++) {
-				System.out.print(c + " ");
+		for (int c = 6; c >= 1; c--) {
+			for (int r = 1; r <= c; r++) {
+				System.out.print(r);
 			}
 			System.out.println();
 		}
