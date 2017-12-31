@@ -20,9 +20,15 @@ public class Exercise_23_04 {
 	public static int partition(int[] list, int first, int last) {
 		int middle = list[(list.length - 1) / 2];
 		// choose the median element as the pivot
-		int pivot = median(first, middle, last); 
+		// here should parse the element in the list instead of
+                // index;
+                int pivot = median(list[first], middle, list[last]); 
 		int low = first + 1; // Index for forward search
-		int high = last; // Index for backward search
+		                     // here should not forward the index
+                                     // the pivot is choose from median() 
+                                     // instead of the first element in
+                                     // the list
+                int high = last; // Index for backward search
 
 		while (high > low) {
 			// Search forward from left
