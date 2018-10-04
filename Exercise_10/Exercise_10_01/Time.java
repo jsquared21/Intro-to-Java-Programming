@@ -66,11 +66,11 @@ public class Time {
 
 		if (elapseTime > 0) {
 			totalSeconds = elapseTime / 1000;
-			second += totalSeconds % 60;
+			second = totalSeconds % 60;
 			totalMinutes = totalSeconds / 60;
-			minute += totalMinutes % 60;
+			minute = totalMinutes % 60;
 			totalHours = totalMinutes / 60;
-			hour += totalHours % 24;
+			hour = totalHours % 24;
 		}
 	}
 }
