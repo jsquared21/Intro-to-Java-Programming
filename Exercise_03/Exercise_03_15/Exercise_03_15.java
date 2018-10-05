@@ -37,11 +37,27 @@ public class Exercise_03_15 {
 		System.out.println("The lottery number is " + lottery);
 
 		// Check the guess
+		//$10000
 		if (guess == lottery)
 			System.out.println("Exact match: you win $10,000");
-		if (guessDigit1 == lotteryDigit2)
-		{
-
+		//$3000
+		else if((guessDigit1==lotteryDigit1&&guessDigit2==lotteryDigit3&&guessDigit3==lotteryDigit2)
+				||(guessDigit2==lotteryDigit1&&guessDigit1==lotteryDigit2&&guessDigit3==lotteryDigit3)
+			||(guessDigit2==lotteryDigit2&&guessDigit1==lotteryDigit3&&guessDigit3==lotteryDigit1)
+				||(guessDigit1==lotteryDigit3&&guessDigit2==lotteryDigit1&&guessDigit3==lotteryDigit2)
+			||(guessDigit1==lotteryDigit3&&guessDigit2==lotteryDigit2&&guessDigit3==lotteryDigit1)) {
+			
+			System.out.println("you win $3000");
+		
+		}
+		//$1000
+		else if((guessDigit1==lotteryDigit1||guessDigit1==lotteryDigit2||guessDigit1==lotteryDigit3) 
+			||(guessDigit2==lotteryDigit1||guessDigit2==lotteryDigit2||guessDigit2==lotteryDigit3)
+			||(guessDigit3==lotteryDigit1||guessDigit3==lotteryDigit2||guessDigit3==lotteryDigit3)){
+			System.out.println("you win $1000");
+		}
+		else {
+			System.out.println("you win nothing");
 		}
 	}
 }
