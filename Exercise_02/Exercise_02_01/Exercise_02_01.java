@@ -13,7 +13,7 @@ public class Exercise_02_01 {
 
 		// Prompt user to input a double
 		System.out.print("Enter a degree in Celsius: ");
-		double celsius = input.nextDouble();
+		double celsius = (double) input.nextLine();
 
 		// Convert Celsius to Fahrenheit
 		double fahrenheit = 9.0 / 5 * celsius + 32;
