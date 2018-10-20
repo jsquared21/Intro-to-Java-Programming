@@ -12,7 +12,7 @@ public class Exercise_02_04 {
 
 		// Prompt user to enter the number of pounds
 		System.out.print("Enter a number in pounds: ");
-		double pounds = input.nextDouble();
+		double pounds = (double) input.nextLine();
 
 		// Convert pounds into kilograms
 		double kilograms = pounds * KILOGRAMS_PER_POUND;
