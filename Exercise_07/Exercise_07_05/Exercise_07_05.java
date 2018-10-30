@@ -32,9 +32,8 @@ public class Exercise_07_05 {
 		// distinct numbers separated by exactly one space
 		System.out.println("The number of distinct numbers is " + count);
 		System.out.print("The distinct numbers are");
-		for (int i = 0; i < distinctNumbers.length; i++) {
-			if (distinctNumbers[i] > 0)
-				System.out.print(" " + distinctNumbers[i]);
+		for (int i = 0; i < count; i++) {
+			System.out.print(" " + distinctNumbers[i]);
 		}
 		System.out.println();
 	}
