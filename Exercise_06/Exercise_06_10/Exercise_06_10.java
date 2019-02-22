@@ -9,7 +9,7 @@ public class Exercise_06_10 {
 		int numberOfPrimes = 0;	// Counts the number of prime numbers
 
 		// Find the number of prime numbers less than 10000
-		for (int i = 1; i < 1000; i++) {
+		for (int i = 2; i < 10000; i++) {
 			if (PrimeNumberMethod.isPrime(i))
 				numberOfPrimes++; // Increament 
 		}
