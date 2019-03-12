@@ -18,11 +18,11 @@ public class Exercise_08_22 {
 
 		// Display if every row and every column have an even number of 1s
 		System.out.println("Every row" + 
-			(isAllRowsEven1s(matrix) ? " " : " does not " + 
-				"have an even number of 1s"));
+			(isAllRowsEven1s(matrix) ? " does have an even number of 1s" : 
+			 " does not have an even number of 1s"));
 		System.out.println("Every column" + 
-			(isAllColumnsEven1s(matrix) ? " " : " does not " + 
-				"have an even number of 1s"));
+			(isAllColumnsEven1s(matrix) ? " does have an even number of 1s" : 
+			 " does not have an even number of 1s"));
 	}
 
 	/** isAllRowsEven1s returns true is every row has an even number of 1s */
