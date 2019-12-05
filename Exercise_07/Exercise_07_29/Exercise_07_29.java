@@ -33,7 +33,10 @@ public class Exercise_07_29 {
 	public static int sum(int[] deck) {
 		int sum = 0;
 		for (int i = 0; i < deck.length; i++) {
-			sum += ((i + 1) % 13) * deck[i]; 
+			if ((i + 1) % 13 == 0)
+				sum += 13 * deck[i];
+			else
+				sum += ((i + 1) % 13) * deck[i]; 
 		}
 		return sum;
 	}
