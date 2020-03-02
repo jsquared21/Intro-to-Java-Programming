@@ -22,7 +22,12 @@ public class GenericStack<E> {
 
 	/** Return and remove the top element from the stack */
 	public E pop() {
-		E o = list[--size];
+		if (--size < 0)
+		    size = 0;
+		E o = list[size];
+		E[] new_list = (E[]) new Object[list.length];
+		System.arraycopy(list, 0, new_list, 0, size);
+		list = new_list;
 		return o;
 	}
 
@@ -41,6 +46,15 @@ public class GenericStack<E> {
 
 	@Override // Override the toString array in the Object class
 	public String toString() {
-		return "stack: " + list.toString();
+		String s = "Stack: [";
+		if (isEmpty())
+			return s + "]";
+		for (int i = 0; i < size; i++) {
+		    if (i == size-1)
+			s += list[i].toString() + "]";
+		    else 
+			s += list[i].toString() + ", ";
+		}
+		return s;
 	}
 }
