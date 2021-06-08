@@ -20,7 +20,7 @@ public class Exercise_02_05 {
 		double total = subtotal + gratuity;
 
 		// Display results
-		System.out.println("The gratuity is $" + gratuity +
+		System.out.println("The gratuity is $" + gratuity +dds
 			" and total is $" + total);
 	}
 }
