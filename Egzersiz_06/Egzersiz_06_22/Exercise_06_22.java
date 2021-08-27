@@ -4,6 +4,7 @@ the sqrt method in the Math class. One such technique is known as the
 Babylonian method. It approximates the square root of a number, n, by repeatedly
 performing a calculation using the following formula:
 
+
 nextGuess = (lastGuess + n / lastGuess) / 2
 
 When nextGuess and lastGuess are almost identical, nextGuess is the
@@ -19,30 +20,27 @@ import java.util.Scanner;
 
 public class Exercise_06_22 {
 	/** Main Method */
+	public class Bolum6_22_YaklasikKarakök {
 	public static void main(String[] args) {
-		Scanner input = new Scanner(System.in); // Create a Scanner
-
-		// Prompt the user to enter an integer
-		System.out.print("Enter a number: ");
-		long number = input.nextLong();
-
-		// Display the square root
-		System.out.println(
-			"The approximated square root of " + number + " is: " + sqrt(number));
+		Scanner input = new Scanner(System.in);
+		System.out.println("Enter a number.");
+		long n = input.nextLong();
+		sgrt(n);
 	}
-	
-	/** Method squrt approximates the square root of n */
-	public static double sqrt(long n) {
-		long lastGuess = 1;	// Initial guess to positive value
-		long nextGuess = (lastGuess + n / lastGuess) / 2; 
 
-		// If the difference between nextGuess and lastGuess is less than 0.0001,
-		// return nextGuess as the approximated square root of n.
-		while (nextGuess - lastGuess > 0.0001) {
+	public static double sgrt(long n) {
+		double lastGuess = 1;
+		double nextGuess = (lastGuess + n / lastGuess) / 2;
+		double m = n;
+		while (n == m) {
 			lastGuess = nextGuess;
 			nextGuess = (lastGuess + n / lastGuess) / 2;
+			if (nextGuess - lastGuess == 0.0) {
+				System.out.println(n + " is result sgrt: " + nextGuess);
+				m++;
+			}
+
 		}
-		lastGuess = nextGuess;
-		return nextGuess = (lastGuess + n / lastGuess) / 2;
+		return n;
 	}
 }
