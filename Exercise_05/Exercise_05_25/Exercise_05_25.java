@@ -9,10 +9,8 @@ public class Exercise_05_25 {
 		// Compute PI value for i = 10000, 
 		double sum = 0;
 		double value = 10000.0;
-		for (double d = 1; d <= (2 * value - 1); d += 2) {
-			sum += 1 / d;
-			d += 2;
-			sum -= 1 / d; 
+		for (int d = 1; d <= value; d++)
+			sum += Math.pow(-1, d + 1)/(2 * d - 1);
 		}
 		double pi = 4 * sum;
 
@@ -22,10 +20,8 @@ public class Exercise_05_25 {
 		// Compute PI value for i = 20000,
 		sum = 0;
 		value = 20000.0;
-		for (double d = 1; d <= (2 * value - 1); d += 2) {
-			sum += 1 / d;
-			d += 2;
-			sum -= 1 / d; 
+		for (int d = 1; d <= value; d++)
+			sum += Math.pow(-1, d + 1)/(2 * d - 1);
 		}
 		pi = 4 * sum;
 
@@ -35,10 +31,8 @@ public class Exercise_05_25 {
 		// Compute PI value for i = 20000,
 		sum = 0;
 		value = 100000.0;
-		for (double d = 1; d <= (2 * value - 1); d += 2) {
-			sum += 1 / d;
-			d += 2;
-			sum -= 1 / d; 
+		for (int d = 1; d <= value; d++)
+			sum += Math.pow(-1, d + 1)/(2 * d - 1);
 		}
 		pi = 4 * sum;
 
